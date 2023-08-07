@@ -1,0 +1,18 @@
+displayName: traefik-jwt-auth-claims
+type: middleware
+
+import: github.com/maiaaraujo5/traefik-jwt-claims
+
+summary: 'A middleware for validation JWT and passing claims to the header.'
+
+testData:
+  secretKey:
+    mySecretKey
+  nameOfAuthorizationHeader:
+    Authorization
+  nameOfUserIDInToken:
+    userID
+  nameForUserIDInHeader:
+    x-user-id
+  excludePaths:
+    /path1,/path2
