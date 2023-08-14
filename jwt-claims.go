@@ -79,6 +79,10 @@ func (t *TraefikJWTClaims) getToken(stringToken string) (*jwt.Token, error) {
 }
 
 func (t *TraefikJWTClaims) pathShouldNotUseAuthentication(path string) bool {
+	if strings.Contains(path, "swagger") {
+		return true
+	}
+
 	_, ok := t.ExcludePaths[path]
 	return ok
 }
